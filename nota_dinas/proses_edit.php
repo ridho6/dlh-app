@@ -8,6 +8,7 @@ if (isset($_POST['update'])) {
   $tgl_nota   = $_POST['tgl_nota'];
   $tujuan     = $_POST['tujuan'];
   $perihal    = $_POST['perihal'];
+  $nominal    = $_POST['nominal'];
   $kode_klas  = $_POST['kode_klasifikasi']; // Kode Baru (misal: 000.1.1)
   $bidang     = $_POST['bidang'];           // Bidang Baru
   $file_path  = $_POST['file_lama'];
@@ -68,6 +69,7 @@ if (isset($_POST['update'])) {
             tgl_nota = ?, 
             tujuan = ?, 
             perihal = ?, 
+            nominal = ?,
             kode_klasifikasi = ?, 
             bidang = ?, 
             bulan = ?, 
@@ -81,6 +83,7 @@ if (isset($_POST['update'])) {
     $tgl_nota,
     $tujuan,
     $perihal,
+    $nominal,
     $kode_klas,
     $bidang,
     $bulan_romawi_baru,

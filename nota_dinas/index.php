@@ -50,6 +50,7 @@ $data = $pdo->query($query)->fetchAll();
                 <th>Tanggal</th>
                 <th>Tujuan Alamat Penerima</th>
                 <th>Perihal</th>
+                <th>Nominal</th>
                 <th>Kode Klasifikasi</th>
                 <th>Bidang</th>
                 <th>Bulan</th>
@@ -71,7 +72,9 @@ $data = $pdo->query($query)->fetchAll();
 
                   <td><?= htmlspecialchars($row['tujuan']) ?></td>
                   <td><?= htmlspecialchars($row['perihal']) ?></td>
-
+                  <td class="text-end" style="white-space: nowrap;">
+                    Rp <?= number_format($row['nominal'], 0, ',', '.') ?>
+                  </td>
                   <td><span class="badge bg-secondary"><?= htmlspecialchars($row['kode_klasifikasi']) ?></span></td>
                   <td><?= htmlspecialchars($row['bidang']) ?></td>
 

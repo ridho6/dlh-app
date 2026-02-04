@@ -56,7 +56,13 @@ function cekSelected($value, $dbValue)
             <label class="fw-bold">Perihal</label>
             <textarea name="perihal" class="form-control" rows="2" required><?= htmlspecialchars($data['perihal']) ?></textarea>
           </div>
-
+          <div class="mb-3">
+            <label class="fw-bold">Nominal (Rp)</label>
+            <div class="input-group">
+              <span class="input-group-text">Rp</span>
+              <input type="number" name="nominal" class="form-control" value="<?= $data['nominal'] ?>" min="0" required>
+            </div>
+          </div>
           <div class="mb-3">
             <label class="fw-bold">Kode Klasifikasi</label>
             <select name="kode_klasifikasi" class="form-select" required>

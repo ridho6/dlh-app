@@ -7,6 +7,7 @@ if (isset($_POST['simpan'])) {
   $tgl_nota   = $_POST['tgl_nota'];
   $tujuan     = $_POST['tujuan'];
   $perihal    = $_POST['perihal'];
+  $nominal    = $_POST['nominal'];
   $kode_klas  = $_POST['kode_klasifikasi'];
   $bidang     = $_POST['bidang'];
   $user_id    = $_SESSION['user_id'];
@@ -65,8 +66,8 @@ if (isset($_POST['simpan'])) {
   }
 
   // 6. SIMPAN KE DATABASE
-  $sql = "INSERT INTO nota_dinas (no_urut, tgl_nota, tujuan, perihal, kode_klasifikasi, bidang, bulan, tahun, file_path, nomor_nota, created_by) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  $sql = "INSERT INTO nota_dinas (no_urut, tgl_nota, tujuan, perihal, nominal, kode_klasifikasi, bidang, bulan, tahun, file_path, nomor_nota, created_by) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
@@ -74,6 +75,7 @@ if (isset($_POST['simpan'])) {
     $tgl_nota,
     $tujuan,
     $perihal,
+    $nominal,
     $kode_klas,
     $bidang,
     $bulan_romawi,

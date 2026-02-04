@@ -127,21 +127,21 @@ try {
 
   <div class="container-fluid mt-2">
 
-<table style="width: 100%; border-bottom: 3px double #000; margin-bottom: 20px; padding-bottom: 10px;">
-    <tr>
+    <table style="width: 100%; border-bottom: 3px double #000; margin-bottom: 20px; padding-bottom: 10px;">
+      <tr>
         <td style="width: 15%; text-align: center; border: none !important;">
-            <img src="<?= BASE_URL ?>assets/images/logo-bjm.png" style="width: 80px; height: auto;">
+          <img src="<?= BASE_URL ?>assets/images/logo-bjm.png" style="width: 80px; height: auto;">
         </td>
-        
+
         <td style="text-align: center; border: none !important;">
-            <h4 style="margin: 0; font-weight: bold;">PEMERINTAH KOTA BANJARMASIN</h4>
-            <h3 style="margin: 0; font-weight: bold;">DINAS LINGKUNGAN HIDUP</h3>
-            <p style="margin: 0; font-size: 10pt;">Jl. RE Martadinata No.1, Telp. (0511) 123456, Banjarmasin</p>
+          <h4 style="margin: 0; font-weight: bold;">PEMERINTAH KOTA BANJARMASIN</h4>
+          <h3 style="margin: 0; font-weight: bold;">DINAS LINGKUNGAN HIDUP</h3>
+          <p style="margin: 0; font-size: 10pt;">Jl. RE Martadinata No.1, Telp. (0511) 123456, Banjarmasin</p>
         </td>
-        
+
         <td style="width: 15%; border: none !important;"></td>
-    </tr>
-</table>
+      </tr>
+    </table>
 
     <div class="text-center mb-4">
       <h5 class="fw-bold text-decoration-underline"><?= $judul ?></h5>
@@ -192,6 +192,7 @@ try {
             <th>Tanggal</th>
             <th>Tujuan</th>
             <th>Perihal</th>
+            <th>Nominal (Rp)</th>
             <th>Kode Klasifikasi</th>
             <th>Bidang</th>
             <th>Nomor Nota</th>
@@ -247,6 +248,9 @@ try {
                 <td class="text-center"><?= date('d/m/Y', strtotime($row['tgl_nota'])) ?></td>
                 <td><?= $row['tujuan'] ?></td>
                 <td><?= $row['perihal'] ?></td>
+                <td style="text-align: right; white-space: nowrap;">
+                  <?= number_format($row['nominal'], 0, ',', '.') ?>
+                </td>
                 <td class="text-center"><?= $row['kode_klasifikasi'] ?></td>
                 <td><?= $row['bidang'] ?></td>
                 <td class="fw-bold" style="white-space: nowrap;"><?= $row['nomor_nota'] ?></td>
@@ -263,6 +267,21 @@ try {
 
             </tr>
           <?php endforeach; ?>
+          <?php
+          if ($kategori == 'nota_dinas' && count($data) > 0) {
+            $total_nominal = 0;
+            foreach ($data as $d) {
+              $total_nominal += $d['nominal'];
+            }
+          ?>
+            <tr>
+              <td colspan="4" style="text-align: right; font-weight: bold;">TOTAL JUMLAH</td>
+              <td style="text-align: right; font-weight: bold; background-color: #eee;">
+                Rp <?= number_format($total_nominal, 0, ',', '.') ?>
+              </td>
+              <td colspan="3"></td>
+            </tr>
+          <?php } ?>
         <?php else: ?>
           <tr>
             <td colspan="10" class="text-center py-4 fst-italic">Tidak ada data arsip pada rentang tanggal ini.</td>
