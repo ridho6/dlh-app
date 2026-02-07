@@ -38,7 +38,6 @@ require_once '../config/kode_klasifikasi.php';
               <span class="input-group-text">Rp</span>
               <input type="number" name="nominal" class="form-control" placeholder="0" min="0" required>
             </div>
-            <small class="text-muted">Masukkan angka saja tanpa titik atau koma.</small>
           </div>
           <div class="mb-3">
             <label class="fw-bold">Kode Klasifikasi</label>
