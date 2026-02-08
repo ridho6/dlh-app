@@ -80,7 +80,7 @@ if (isset($_POST['update'])) {
     $id
   ]);
 
-  $_SESSION['success'] = "Surat Keluar diperbarui! Nomor Baru: " . $nomor_final;
+  $_SESSION['success'] = "Surat Keluar diperbarui!";
   header("Location: index.php");
   exit;
 } else {

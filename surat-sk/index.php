@@ -27,7 +27,7 @@ $data = $pdo->query($query)->fetchAll();
 
       <?php if (in_array($_SESSION['role'], ['admin', 'pegawai', 'sekretariat'])): ?>
         <a href="tambah.php" class="btn btn-primary">
-          <i class="bi bi-plus-lg me-2"></i>Buat SK Baru
+          <i class="bi bi-plus-lg me-2"></i>Catat Surat Keputusan
         </a>
       <?php endif; ?>
     </div>

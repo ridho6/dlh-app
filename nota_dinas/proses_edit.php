@@ -92,7 +92,7 @@ if (isset($_POST['update'])) {
     $id
   ]);
 
-  $_SESSION['success'] = "Nota Dinas berhasil diperbarui! Nomor Baru: " . $nomor_nota_final;
+  $_SESSION['success'] = "Nota Dinas berhasil diperbarui!";
   header("Location: index.php");
   exit;
 } else {

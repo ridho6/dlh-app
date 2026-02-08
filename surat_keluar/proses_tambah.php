@@ -78,7 +78,7 @@ if (isset($_POST['simpan'])) {
     $user_id
   ]);
 
-  $_SESSION['success'] = "Surat Keluar berhasil dicatat! Nomor: " . $nomor_final;
+  $_SESSION['success'] = "Surat Keluar berhasil dicatat!";
   header("Location: index.php");
   exit;
 }

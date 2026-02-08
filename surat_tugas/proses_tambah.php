@@ -74,7 +74,7 @@ if (isset($_POST['simpan'])) {
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$nomor_final, $tgl_tugas, $yang_tugas, $perihal, $bidang, $bulan_romawi, $tahun, $file_path, $user_id]);
 
-  $_SESSION['success'] = "Surat Tugas berhasil dibuat dengan Nomor: " . $nomor_final;
+  $_SESSION['success'] = "Surat Tugas berhasil dicatat!";
   header("Location: index.php");
   exit;
 }

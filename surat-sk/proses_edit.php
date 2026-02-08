@@ -69,7 +69,7 @@ if (isset($_POST['update'])) {
     $id
   ]);
 
-  $_SESSION['success'] = "SK diperbarui! Nomor Baru: " . $nomor_final;
+  $_SESSION['success'] = "SK diperbarui!";
   header("Location: index.php");
   exit;
 } else {

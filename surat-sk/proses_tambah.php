@@ -61,7 +61,7 @@ if (isset($_POST['simpan'])) {
     $user_id
   ]);
 
-  $_SESSION['success'] = "SK berhasil dicatat! Status Pending.";
+  $_SESSION['success'] = "SK berhasil dicatat!";
   header("Location: index.php");
   exit;
 }
